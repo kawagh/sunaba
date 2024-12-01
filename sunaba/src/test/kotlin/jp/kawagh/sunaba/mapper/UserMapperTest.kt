@@ -39,6 +39,15 @@ class UserMapperTest(@Autowired private val userMapper: UserMapper) {
         }
 
         @Test
+        @DisplayName("idは自動採番された値が使われる")
+        fun testAdd() {
+            // valで宣言した値が変更されるのはイメージと少し差がある
+            val newUser = User(null, "new")
+            userMapper.add(newUser)
+            Assertions.assertNotNull(newUser)
+        }
+
+        @Test
         @Sql("/insert_user.sql")
         @DisplayName("userの名前が更新されていること")
         fun testUpdate() {

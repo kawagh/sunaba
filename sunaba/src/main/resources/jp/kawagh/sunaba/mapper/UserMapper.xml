@@ -7,6 +7,18 @@
         FROM user
     </select>
 
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user
+            (
+            id
+            , name
+            )
+        VALUES(
+            #{id}
+            , #{name}
+        )
+    </insert>
+
     <update id="update">
         UPDATE user
             SET name = #{name}
