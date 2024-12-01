@@ -28,10 +28,13 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3")
+	implementation("mysql:mysql-connector-java:8.0.33")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
