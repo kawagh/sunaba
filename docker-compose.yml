@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  mysql:
+    container_name: sunaba_mysql
+    image: mysql:8.0.33
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: sunaba_mysql
+    ports:
+      - "33066:3306"
