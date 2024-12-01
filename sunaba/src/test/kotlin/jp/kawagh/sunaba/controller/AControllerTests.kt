@@ -4,15 +4,14 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
-import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
-import org.springframework.test.web.servlet.setup.MockMvcBuilders
 
-@SpringBootTest
-class AControllerTests {
-    private val aController: AController = AController()
-    private val mockMvc = MockMvcBuilders.standaloneSetup(aController).build()
+@WebMvcTest(AController::class)
+class AControllerTests(@Autowired private val mockMvc: MockMvc) {
 
     @Test
     @DisplayName("GET /a")
