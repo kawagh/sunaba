@@ -37,5 +37,25 @@ class UserMapperTest(@Autowired private val userMapper: UserMapper) {
             val r = userMapper.getUsers()
             Assertions.assertEquals(r, emptyList<User>())
         }
+
+        @Test
+        @Sql("/insert_user.sql")
+        @DisplayName("userの名前が更新されていること")
+        fun testUpdate() {
+            val newUser = User(-1, "updated")
+            userMapper.update(newUser)
+
+            val updatedUser = userMapper.findUserById(-1)
+            Assertions.assertEquals(updatedUser!!.name, "updated")
+        }
+
+        @Test
+        @Sql("/insert_user.sql")
+        @DisplayName("userが消去されていること")
+        fun testDelete() {
+            userMapper.deleteById(-1)
+            val deletedUser = userMapper.findUserById(-1)
+            Assertions.assertNull(deletedUser)
+        }
     }
 }

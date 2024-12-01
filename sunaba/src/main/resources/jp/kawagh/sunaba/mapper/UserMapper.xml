@@ -6,4 +6,16 @@
             , name
         FROM user
     </select>
+
+    <update id="update">
+        UPDATE user
+            SET name = #{name}
+            WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        DELETE
+        FROM user
+            WHERE id = #{id}
+    </delete>
 </mapper>
