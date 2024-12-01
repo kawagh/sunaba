@@ -30,5 +30,12 @@ class UserMapperTest(@Autowired private val userMapper: UserMapper) {
             val response = userMapper.findUserById(-1)
             Assertions.assertEquals(response, expected)
         }
+
+        @Test
+        @DisplayName("userがいないケースでは空配列を返す")
+        fun c() {
+            val r = userMapper.getUsers()
+            Assertions.assertEquals(r, emptyList<User>())
+        }
     }
 }
