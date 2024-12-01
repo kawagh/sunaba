@@ -8,7 +8,6 @@ interface UserMapper {
     @Select("SELECT * FROM user WHERE id = #{id}")
     fun findUserById(id: Int): User?
 
-    @Select("SELECT * FROM user")
     fun getUsers(): List<User>
 }
 
