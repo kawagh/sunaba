@@ -6,3 +6,5 @@ spring:
     url: jdbc:mysql://localhost:33066/sunaba_mysql
     username: root
     password: root_password
+  flyway:
+    enabled: true
