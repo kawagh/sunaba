@@ -32,6 +32,7 @@ dependencies {
 	implementation("mysql:mysql-connector-java:8.0.33")
 	implementation("org.flywaydb:flyway-core")
 	implementation("org.flywaydb:flyway-mysql")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
